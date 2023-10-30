@@ -2,7 +2,7 @@
     <mat-card-title>
         Keith's Monthly Mortgage Calculator
     </mat-card-title>
-        <small>Sorry, not pizza...</small>
+        <!-- <small>Sorry, not pizza...</small> -->
     <mat-card-content>        
         <mat-form-field>
             <mat-label>
@@ -14,7 +14,7 @@
                 [(ngModel)]="loanAmount"
             />            
         </mat-form-field>
-        <br />
+        &nbsp;
         <mat-form-field>
             <mat-label>
                 Loan-Term (years)
@@ -25,7 +25,7 @@
                 [(ngModel)]="loanTerm"
             />
         </mat-form-field>
-        <br />
+        &nbsp;
         <mat-form-field>
             <mat-label>
                 Interest (%)
@@ -36,11 +36,45 @@
                 [(ngModel)]="interestRate"
             />
         </mat-form-field>
+        <!-- add optional fields (taxes, HOI, & HOA) -->
+        <p>Additonal fields for taxes and fees:</p>
+        <mat-form-field>
+            <mat-label>
+                Taxes (%)
+            </mat-label>
+            <input 
+                matInput
+                type="number"
+                [(ngModel)]="localTax"
+            />
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field>
+            <mat-label>
+                HOI <small>Home Owners Insurance</small>
+            </mat-label>
+            <input 
+                matInput
+                type="number"
+                [(ngModel)]="hoi"
+            />
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field>
+            <mat-label>
+                HOA <small>Home Owners Association</small>
+            </mat-label>
+            <input 
+                matInput
+                type="number"
+                [(ngModel)]="hoa"
+            />
+        </mat-form-field>
         <!-- <button 
             mat-mini-fab
             (click)="calculate()"
         > ! </button> -->
         &nbsp; <h4>Monthly Payment: {{ calculate() | currency }} </h4>
-        <small>This calculator does NOT contain regional taxes or other fees (i.e, HOA, HOI, etc.).</small>
+        <!-- <small>This calculator does NOT contain regional taxes or other fees (i.e, HOA, HOI, etc.).</small> -->
     </mat-card-content>    
 </mat-card>
